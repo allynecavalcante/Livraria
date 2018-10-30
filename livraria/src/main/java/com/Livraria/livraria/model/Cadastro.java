@@ -6,9 +6,11 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import com.Livraria.livraria.repository.CadastroRepository;
+
 @Entity
 @Table
-public class Cadastro {
+public class Cadastro  {
 	
 	@Id
 	@GeneratedValue
