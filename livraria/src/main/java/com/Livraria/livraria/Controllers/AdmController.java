@@ -4,7 +4,6 @@ import javax.management.relation.RelationNotFoundException;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.autoconfigure.kafka.KafkaProperties.Admin;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.ResponseEntity;
@@ -22,13 +21,14 @@ import com.Livraria.livraria.repository.AdmRepository;
 
 
 
+
 @RestController
 public class AdmController {
 	@Autowired
 	private AdmRepository admRepository;
 	
 	@GetMapping("/Administrador")
-	public Page getAdministrador(Pageable pageable){
+	public Page<Administrador> getAdministrador(Pageable pageable){
 		return admRepository.findAll(pageable);
 	}
 	
@@ -37,17 +37,17 @@ public class AdmController {
 		return admRepository.save(administrador);
 	}
 	
-	@PutMapping("/Administrador/{administradorId}")
-	public Admin updateAdministrador(@PathVariable Long administradorId,
+	@PutMapping("/administrador/{administradorId}")
+	public Administrador updateAdministrador(@PathVariable Long administradorId,
             								@Valid @RequestBody Administrador administradorRequest) {
 		return  admRepository.findById(administradorId)
-				.map(administrador-> {
+				.map( administrador-> {
 			
 					administrador.setCadastroLivro(administradorRequest.getCadastroLivro());
 					administrador.setRemoverLivro(administradorRequest.getRemoverLivro());
 					administrador.setAdiconarComentarios(administradorRequest.getAdiconarComentarios());
 					return admRepository.save(administrador);
-		}).orElseThrow(() -> new ResourceNotFoundException("lOGIN CONCLUIDO: " + administradorId));
+		}).orElseThrow(() -> new ResourceNotFoundException("REMOÇÃO CONCLUIDA: " + administradorId));
 	}
 	
 	@DeleteMapping("/Administrador/{administradorId}")
@@ -56,7 +56,7 @@ public class AdmController {
 			.map(administrador -> {
 				admRepository.delete(administrador);
 					return ResponseEntity.ok().build();
-				}).orElseThrow(() -> new RelationNotFoundException("NÃO CONCLUIDO: " + administradorId));
+				}).orElseThrow(() -> new RelationNotFoundException("REMOÇÃO NÃO CONCLUIDO: " + administradorId));
 	}
 
 }

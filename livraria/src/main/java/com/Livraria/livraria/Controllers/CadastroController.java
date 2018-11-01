@@ -48,7 +48,7 @@ public class CadastroController {
 					cadastro.setEmail(cadastroRequest.getEmail());
 					cadastro.setIdade(cadastroRequest.getIdade());
 					return cadastroRepository.save(cadastro);
-		}).orElseThrow(() -> new ResourceNotFoundException("lOGIN CONCLUIDO: " + cadastroId));
+		}).orElseThrow(() -> new ResourceNotFoundException("CADASTRO CONCLUIDO: " + cadastroId));
 	}
 	
 	@DeleteMapping("/Cadastro/{CadastroId}")
@@ -57,6 +57,6 @@ public class CadastroController {
 			.map(cadastro -> {
 					cadastroRepository.delete(cadastro);
 					return ResponseEntity.ok().build();
-				}).orElseThrow(() -> new RelationNotFoundException("NÃO CONCLUIDO: " + cadastroId));
+				}).orElseThrow(() -> new RelationNotFoundException("CADASTRO NÃO CONCLUIDO: " + cadastroId));
 	}
 }

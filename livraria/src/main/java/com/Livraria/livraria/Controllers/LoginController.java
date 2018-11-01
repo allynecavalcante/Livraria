@@ -47,7 +47,7 @@ public class LoginController {
 					login.setSenha(loginRequest.getSenha());
 					login.setEmail(loginRequest.getEmail());
 					return LoginRepository.save(login);
-		}).orElseThrow(() -> new ResourceNotFoundException("lOGIN CONCLUIDO: " + loginId));
+		}).orElseThrow(() -> new ResourceNotFoundException("LOGIN CONCLUIDO: " + loginId));
 	}
 	
 	@DeleteMapping("/Login/{LoginId}")
@@ -56,6 +56,6 @@ public class LoginController {
 			.map(login -> {
 					LoginRepository.delete(login);
 					return ResponseEntity.ok().build();
-				}).orElseThrow(() -> new RelationNotFoundException("NÃO CONCLUIDO: " + loginId));
+				}).orElseThrow(() -> new RelationNotFoundException("LOGIN NÃO CONCLUIDO: " + loginId));
 	}
 }

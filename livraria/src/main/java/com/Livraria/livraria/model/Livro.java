@@ -19,7 +19,7 @@ public class Livro {
 	private String NomedoLivro;
 	
 	@Column ()
-	private Double qnt;
+	private Double Qnt;
 	
 	@Column ()
 	private String CodigoLivro;
@@ -52,11 +52,11 @@ public class Livro {
 	}
 
 	public Double getQnt() {
-		return qnt;
+		return Qnt;
 	}
 
 	public void setQnt(Double qnt) {
-		this.qnt = qnt;
+		this.Qnt = qnt;
 	}
 
 	public String getCodigoLivro() {
