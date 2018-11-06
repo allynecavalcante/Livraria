@@ -32,6 +32,13 @@ public class LivroController {
 		return livroRepository.findAll(pageable);
 	}
 	
+	@GetMapping("/livro/{livroId}")
+	public Livro getlivro (@PathVariable Long livroId) {
+		return livroRepository.findById(livroId)
+				.orElseThrow(() -> new ResourceNotFoundException("LIVRO: " + livroId));
+		
+			}
+	
 	@PostMapping("/Livro")
 	public Livro createLivro(@Valid @RequestBody Livro livro) {
 		return livroRepository.save(livro);
