@@ -1,5 +1,7 @@
 package com.Livraria.livraria.model;
 
+import java.util.List;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -35,6 +37,14 @@ public class Livro {
 
 	
 	
+	public Livro(String string, double d) {
+		// TODO Auto-generated constructor stub
+	}
+
+	public Livro() {
+		// TODO Auto-generated constructor stub
+	}
+
 	public long getId() {
 		return id;
 	}
@@ -89,6 +99,36 @@ public class Livro {
 
 	public void setDescrição(String descrição) {
 		Descrição = descrição;
+	}
+
+	public Double getValor() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public Object getMaiorPreco() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public Object getMenorPreco() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public void getLivroPrecos(Livro livro) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public List<Livro> getLivrosMaisCaros() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public static void add(Livro romance) {
+		// TODO Auto-generated method stub
+		
 	}
 	
 	
