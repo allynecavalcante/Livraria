@@ -1,0 +1,91 @@
+/ * ESTILOS GLOBAIS
+-------------------------------------------------- * /
+/ * Preenchimento abaixo do rodapé e texto do corpo mais claro * /
+
+body {
+  top de enchimento: 3rem;
+  preenchimento-fundo: 3rem;
+  cor: # 5a5a5a;
+}
+
+
+/ * PERSONALIZE O CARROSSEL
+-------------------------------------------------- * /
+
+/ * Classe base do carrossel * /
+carousel {
+  margem-fundo: 4rem;
+}
+/ * Desde o posicionamento da imagem, precisamos ajudar a legenda * /
+.carousel-caption {
+  fundo: 3rem;
+  índice z: 10;
+}
+
+/ * Declarar alturas por causa do posicionamento do elemento img * /
+.carossel-item {
+  altura: 32rem;
+  background-color: # 777;
+}
+.caracterel-item> img {
+  posição: absoluta;
+  top: 0;
+  esquerda: 0;
+  min-width: 100%;
+  altura: 32rem;
+}
+
+
+/ * CONTEÚDO DE MARKETING
+-------------------------------------------------- * /
+
+/ * Centro alinhar o texto dentro das três colunas abaixo do carrossel * /
+.marketing .col-lg-4 {
+  margem-fundo: 1.5rem;
+  texto-alinhar: centro;
+}
+.marketing h2 {
+  font-weight: 400;
+}
+.marketing .col-lg-4 p {
+  margem-direita: .75rem;
+  margin-left: .75rem;
+}
+
+
+/ * Featurettes
+------------------------- * /
+
+.featurette-divider {
+  margem: 5rem 0; / * Espaço fora do Bootstrap <hr> mais * /
+}
+
+/ * Dilua os títulos de marketing * /
+.featurette-heading {
+  font-weight: 300;
+  altura da linha: 1;
+  espaçamento entre letras: -.05rem;
+}
+
+
+CSS * RESPONSIVA
+-------------------------------------------------- * /
+
+@media (min-width: 40em) {
+  / * Aumenta o tamanho do conteúdo do carrossel * /
+  .carousel-caption p {
+    margem-fundo: 1.25rem;
+    tamanho da fonte: 1.25rem;
+    altura da linha: 1,4;
+  }
+
+  .featurette-heading {
+    tamanho da fonte: 50px;
+  }
+}
+
+@media (min-width: 62em) {
+  .featurette-heading {
+    margem-top: 7rem;
+  }
+}
