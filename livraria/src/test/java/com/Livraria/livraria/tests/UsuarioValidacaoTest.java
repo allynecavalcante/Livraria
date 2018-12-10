@@ -13,7 +13,7 @@ public class UsuarioValidacaoTest {
 	@Test
 	public void deveValidarNomeMaiorOuIgual8Caracteres() {
 
-		String nome = "Allyne ";
+		String nome = "Allyne Cavalcante";
 		String email = "example@gmail.com";
 		int idade = 18;
 		int senha=123456;
@@ -27,7 +27,7 @@ public class UsuarioValidacaoTest {
 	@Test
 	public void naoDeveValidarEmailSemArroba() {
 
-		String nome = "Allyne ";
+		String nome = "Allyne Cavalcante";
 		String email = "examplegmail.com";
 		int idade = 18;
 		int senha=123456;
@@ -40,20 +40,20 @@ public class UsuarioValidacaoTest {
 	 @Test
 	 public void deveValidarMaiorOuIgual18() {
 	
-	 String nome = "Allyne ";
+	 String nome = "Allyne Cavalcante ";
 	 String email = "example@gmailcom";
-	 int idade = 18;
+	 int idade = 15;
 	 int senha=123456;
 	
-    boolean retornaIdadeDoUsuarioValido = usuario.validarUsuario(nome, email, idade, senha);
+    boolean retornaIdadeDoUsuarioInvalido = usuario.validarUsuario(nome, email, idade, senha);
 	
-     assertEquals(true, retornaIdadeDoUsuarioValido);
+     assertEquals(false, retornaIdadeDoUsuarioInvalido);
 	 }
 	 
 	 @Test
 	 public void deveValidarMaiorOuigual6() {
 	
-	 String nome = "Allyne ";
+	 String nome = "Allyne Cavalcante";
 	 String email = "example@gmailcom";
 	 int idade = 18;
 	 int senha=123;
