@@ -7,7 +7,6 @@ public class UsuarioValidacao {
 
 	private static int LIMITE_CARACTERES_NOME = 8;
 	private static int LIMITE_MINIMO_IDADE = 18;
-	private static int LIMITE_CARACTERES_SENHA = 6;
 
 	/**
 	 * https://pt.stackoverflow.com/questions/68209/verificacao-de-email-em-java
@@ -20,24 +19,15 @@ public class UsuarioValidacao {
 
 	private static Matcher matcher;
 
-	public boolean validarUsuario(String nome, String email, int idade,int senha) {
+	public boolean validarUsuario(String nome, String email) {
 
-		
-		if (validarNome(nome) && validarEmail(email) && validarIdade(idade) && validarSenha(senha)) {
+		if (validarNome(nome) && validarEmail(email)) {
 
 			return true;
 		}
 
 		else
 			return false;
-	}
-
-	private boolean validarSenha(int senha) {
-		if (senha>= LIMITE_CARACTERES_SENHA) {
-		
-		return true;
-	}
-        return false;
 	}
 
 	public boolean validarNome(String nome) {
@@ -60,6 +50,10 @@ public class UsuarioValidacao {
 		} else
 			return false;
 
+	}
+
+	public boolean validarSenhal() {
+		return true;
 	}
 
 	public boolean validarIdade(int idade) {

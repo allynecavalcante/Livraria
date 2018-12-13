@@ -36,8 +36,8 @@ function cadastrar()
 	
 	
 	let novo_cadastro = {"nome": document.getElementById("nome").value, 
-			"idade": document.getElementById("idade").value, 
-			"email": document.getElementById("email").value, 
+			"idade": document.getElementById("Idade").value, 
+			"email": document.getElementById("Email").value, 
 			"senha": document.getElementById("senha").value, 
 			
 	
@@ -52,7 +52,7 @@ function cadastrar()
 		},
 		
 		body: JSON.stringify(novo_cadastro)
-	}). then(function (response)
+	}. then(function (response)
 	{
 	
 		createTable();
@@ -245,7 +245,7 @@ function atualizarCadastro()
 		},
 		
 		body: JSON.stringify(novo_endereco)
-	}). then(function (response)
+	}. then(function (response)
 	{
 	
 		createTable();

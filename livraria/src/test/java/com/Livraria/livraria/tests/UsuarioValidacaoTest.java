@@ -11,15 +11,13 @@ public class UsuarioValidacaoTest {
 	public UsuarioValidacao usuario = new UsuarioValidacao();
 
 	@Test
-	public void deveValidarNomeMaiorOuIgual8Caracteres() {
+	public void deveVlidarNomeMaiorOuIgual8Caracteres() {
 
-		String nome = "Allyne Cavalcante";
-		String email = "example@gmail.com";
-		int idade = 18;
-		int senha=123456;
+		String nome = "shelton ";
+		String email = "shelton@gmail.com";
+//		int idade = 18;
 
-	
-		boolean retornaNomeDoUsuarioValido = usuario.validarUsuario(nome, email, idade, senha);
+		boolean retornaNomeDoUsuarioValido = usuario.validarUsuario(nome, email);
 
 		assertEquals(true, retornaNomeDoUsuarioValido);
 	}
@@ -27,40 +25,26 @@ public class UsuarioValidacaoTest {
 	@Test
 	public void naoDeveValidarEmailSemArroba() {
 
-		String nome = "Allyne Cavalcante";
-		String email = "examplegmail.com";
-		int idade = 18;
-		int senha=123456;
+		String nome = "shelton ";
+		String email = "sheltongmail.com";
+//		int idade = 18;
 
-		boolean retornaEmailDoUsuarioInValido = usuario.validarUsuario(nome, email, idade, senha);
+		boolean retornaEmailDoUsuarioInValido = usuario.validarUsuario(nome, email);
 
 		assertEquals(false, retornaEmailDoUsuarioInValido);
 	}
 
-	 @Test
-	 public void deveValidarMaiorOuIgual18() {
-	
-	 String nome = "Allyne Cavalcante ";
-	 String email = "example@gmailcom";
-	 int idade = 15;
-	 int senha=123456;
-	
-    boolean retornaIdadeDoUsuarioInvalido = usuario.validarUsuario(nome, email, idade, senha);
-	
-     assertEquals(false, retornaIdadeDoUsuarioInvalido);
-	 }
-	 
-	 @Test
-	 public void deveValidarMaiorOuigual6() {
-	
-	 String nome = "Allyne Cavalcante";
-	 String email = "example@gmailcom";
-	 int idade = 18;
-	 int senha=123;
-	
-    boolean retornaSenhaDoUsuarioInvalido = usuario.validarUsuario(nome, email, idade, senha);
-	
-	assertEquals(false, retornaSenhaDoUsuarioInvalido);
-	 }
+	// @Test
+	// public void deveValidarMaiorOuIgual18() {
+	//
+	// String nome = "shelton ";
+	// String email = "shelton@gmailcom";
+	// int idade = 18;
+	//
+	// boolean retornaNomeDoUsuarioValido = usuario.validarUsuario(nome, email,
+	// idade);
+	//
+	// assertEquals(true, retornaNomeDoUsuarioValido);
+	// }
 
 }

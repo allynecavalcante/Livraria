@@ -24,6 +24,9 @@ public class Administrador {
 	private String AdiconarComentarios;
 	
 	
+	
+	
+	
 	public long getId() {
 		return id;
 	}
