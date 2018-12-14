@@ -10,5 +10,10 @@ import com.Livraria.livraria.model.Login;
 @Repository
 public interface LoginRepository extends JpaRepository <Login,Long>{
 
+	
+	public Login findByEmailAndSenha(String email, String senha);
 }
+
+	
+
 

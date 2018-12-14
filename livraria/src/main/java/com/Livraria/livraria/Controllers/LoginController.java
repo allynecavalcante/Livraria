@@ -1,6 +1,8 @@
 package com.Livraria.livraria.Controllers;
 
 
+import java.util.Map;
+
 import javax.management.relation.RelationNotFoundException;
 import javax.validation.Valid;
 
@@ -26,36 +28,44 @@ import com.Livraria.livraria.repository.LoginRepository;
 public class LoginController {
 
 	@Autowired
-	private LoginRepository LoginRepository;
+	private LoginRepository loginRepository;
 	
-	@GetMapping("/Login")
+	@GetMapping("/login")
 	public Page<Login> getLogin(Pageable pageable){
-		return LoginRepository.findAll(pageable);
+		return loginRepository.findAll(pageable);
 	}
 	
 	@PostMapping("/login")
 	public Login createLogin(@Valid @RequestBody Login login) {
-		return LoginRepository.save(login);
+		return loginRepository.save(login);
 	}
 	
 	@PutMapping("/login/{loginId}")
 	public Login updateLogin(@PathVariable Long loginId,
             								@Valid @RequestBody Login loginRequest) {
-		return LoginRepository.findById(loginId)
+		return loginRepository.findById(loginId)
 				.map(login-> {
 			
 					login.setSenha(loginRequest.getSenha());
 					login.setEmail(loginRequest.getEmail());
-					return LoginRepository.save(login);
+					return loginRepository.save(login);
 		}).orElseThrow(() -> new ResourceNotFoundException("LOGIN CONCLUIDO: " + loginId));
 	}
 	
-	@DeleteMapping("/Login/{LoginId}")
+	@DeleteMapping("/login/{LoginId}")
 	public ResponseEntity<?> deleteQuestion(@PathVariable Long loginId) throws RelationNotFoundException{
-		return LoginRepository.findById(loginId)
+		return loginRepository.findById(loginId)
 			.map(login -> {
-					LoginRepository.delete(login);
+					loginRepository.delete(login);
 					return ResponseEntity.ok().build();
 				}).orElseThrow(() -> new RelationNotFoundException("LOGIN NÃO CONCLUIDO: " + loginId));
 	}
-}
+	
+	@PostMapping("/logar")
+	public Login login (@RequestBody Map<String, String> params) {
+		return loginRepository.findByEmailAndSenha(params.get("email"),params.get("senha"));
+	}
+
+	
+	
+}   

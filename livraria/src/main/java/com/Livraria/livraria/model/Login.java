@@ -13,26 +13,27 @@ public class Login {
  private long id;
  
     @Column(nullable=false)	
-	private String Email;
+	private String email;
  
     @Column(nullable=false)	
-	private String Senha;
+	private String senha;
  
 	public String getEmail() {
-	return Email;
+	return email;
 }
 
 public void setEmail(String email) {
-	Email = email;
+	this.email = email;
 }
 
 public String getSenha() {
-	return Senha;
+	return senha;
 }
 
 public void setSenha(String senha) {
-	Senha = senha;
+	this.senha = senha;
 }
+
 
 	
 	

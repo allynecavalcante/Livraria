@@ -10,16 +10,16 @@
     <title>Login</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
-    <link href="../css/login.css" rel="stylesheet">
+    <link href="css/login.css" rel="stylesheet">
   </head>
-
+<CENTER>
   <body class="text-center">
     <form class="form-signin">
-      <img class="mb-4" src="../img/user.jpg" alt="" width="72" height="72">
-      <h1 class="h3 mb-3 font-weight-normal">Informe seus dados </h1>
+      <img class="mb-4" src="img/user.jpg" alt="" width="72" height="72">
+      <h1 class="h3 mb-3 font-weight-normal">Login </h1>
       <label for="inputEmail" class="sr-only">Email </label>
       <input type="email" id="inputEmail" class="form-control" placeholder="Email " required autofocus>
       <label for="inputPassword" class="sr-only">Senha</label>
@@ -29,8 +29,14 @@
           <input type="checkbox" value="lembre-me"> Lembre-me
         </label>
       </div>
-      <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+      <button class="btn btn-lg btn-primary btn-block" type="submit" onClick="login()">Sign in</button>
       <p class="mt-5 mb-3 text-muted">&copy; 2017-2018</p>
+
+       <small><strong>Não possui conta ?</strong></small><a href="cadastro.html">Cadastre-se</a>
+
     </form>
+    
+    <script type="text/javascript" src="js/login.js"></script>
   </body>
+  </CENTER>
 </html>
