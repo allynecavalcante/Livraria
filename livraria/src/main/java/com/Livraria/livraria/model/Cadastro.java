@@ -28,16 +28,6 @@ public class Cadastro  {
 	private String senha;
 
 
-	private boolean pagamento;
-	
-
-	public boolean isPagamento() {
-		return pagamento;
-	}
-
-	public void setPagamento(boolean pagamento) {
-		this.pagamento = pagamento;
-	}
 
 	public long getId() {
 		return id;
@@ -80,7 +70,6 @@ public class Cadastro  {
 	}
 
 	public Object validarUsuario(String string, String string2) {
-		// TODO Auto-generated method stub
 		return null;
 	}
 	
